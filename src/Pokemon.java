@@ -1,11 +1,11 @@
 public  class Pokemon implements IAssaultEquipment {
-    int attackPower;  //saldırı Gücü
+    private int attackPower;  //saldırı Gücü
 
     public Pokemon(int attackPower) {
         this.attackPower = attackPower;
     }
-
-    public void inflictDamage(Player enemy) {
+    @Override
+    public void damage(Player enemy) {
         enemy.setHealth(enemy.getHealth()-this.attackPower);
     }
 

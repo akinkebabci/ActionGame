@@ -1,5 +1,5 @@
 public interface IAssaultEquipment {
     int attackPower = 0;
-    void inflictDamage (Player enemy);
+    void damage (Player enemy);
     void showInfo();
 }

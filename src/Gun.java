@@ -1,24 +1,24 @@
 public class Gun extends Weapon {
-    private int ammoCount;
+    private int numberOfBullets;
 
     public Gun(int attackPower, String brand) {
         super(attackPower, brand);
-        this.ammoCount = 2;  //number of bulllets
+        this.numberOfBullets = 2;
     }
 
     @Override
-    public void inflictDamage(Player enemy) {
-        if (this.ammoCount >= 0 && this.ammoCount <= 2) {
-            super.inflictDamage(enemy);
+    public void damage(Player enemy) {
+        if (this.numberOfBullets >= 0 && this.numberOfBullets <= 2) {
+            super.damage(enemy);
         }
-        this.ammoCount--;
+        this.numberOfBullets--;
 
     }
 
     @Override
     public void showInfo() {
         super.showInfo();
-        System.out.println("Mermi Sayısı : " + this.ammoCount);
+        System.out.println("Mermi Sayısı : " + this.numberOfBullets);
 
     }
 }

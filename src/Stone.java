@@ -6,7 +6,7 @@ public class Stone implements IAssaultEquipment {
     }
 
     @Override
-    public void inflictDamage(Player enemy) { //Damage
+    public void damage(Player enemy) {
         enemy.setHealth(enemy.getHealth()-this.attackPower);
 
     }

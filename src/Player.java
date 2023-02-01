@@ -51,7 +51,7 @@ public class Player {
     }
 
     //Saldırı Ekipmanı ekle
-    public void assaultEquipmentsAdd(IAssaultEquipment iAssaultEquipment){
+    public void addAssaultEquipments(IAssaultEquipment iAssaultEquipment){
          assaultEquipments[totalEquipments++] = iAssaultEquipment;
 
 
