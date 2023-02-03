@@ -9,12 +9,15 @@ public class Stone implements IAssaultEquipment {
     public void damage(Player enemy) {
         enemy.setHealth(enemy.getHealth()-this.attackPower);
 
+
+
+
     }
 
     @Override
     public void showInfo() {
 
-        System.out.println("Silah ismi : " + getClass().getName());
+        System.out.println(getClass().getName());
         System.out.println("Saldırı Gücü : " + this.attackPower);
     }
 }

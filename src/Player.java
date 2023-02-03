@@ -4,8 +4,10 @@ public class Player {
     private String firstName;
     private String lastName;
     private int health;
-    private int  totalEquipments= 0;
-    private IAssaultEquipment[] assaultEquipments = new IAssaultEquipment[totalEquipments+2];
+    private int totalEquipments = 0;
+    private IAssaultEquipment[] assaultEquipments = new IAssaultEquipment[3];
+
+
 
 
     public Player(String firstName, String lastName) {
@@ -35,6 +37,7 @@ public class Player {
     }
 
     public void setHealth(int health) {
+
         this.health = health;
     }
 
@@ -51,23 +54,27 @@ public class Player {
     }
 
     //Saldırı Ekipmanı ekle
-    public void addAssaultEquipments(IAssaultEquipment iAssaultEquipment){
-         assaultEquipments[totalEquipments++] = iAssaultEquipment;
-
-
+    public void addAssaultEquipments(IAssaultEquipment iAssaultEquipment) {
+        if (totalEquipments<=3){
+            assaultEquipments[totalEquipments++] = iAssaultEquipment;
+        }
     }
+
     //Saldırı Ekipmanı rastgele üret
-    public IAssaultEquipment randomAssaultEquipmentsSelecting(){
+    public IAssaultEquipment randomAssaultEquipmentsSelecting() {
         Random random = new Random();
-        int generateRandom = random.nextInt();
+        int generateRandom = random.nextInt(this.totalEquipments);
         return assaultEquipments[generateRandom];
 
-
-
     }
-    //Bilgileri Gösterme
-    public void showInfo(){
 
+    //Bilgileri Gösterme
+    public void showInfo() {
+        System.out.println("Adı : " + this.firstName);
+        System.out.println("Soyadı : " + this.lastName);
+        System.out.println("Sağlık : " + this.health);
+        System.out.print("Seçtiği Ekipman : ");
+        randomAssaultEquipmentsSelecting().showInfo();
     }
 
 }

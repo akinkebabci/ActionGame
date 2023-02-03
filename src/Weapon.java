@@ -25,7 +25,8 @@ public abstract class Weapon implements IAssaultEquipment {
 
     @Override
     public void damage(Player enemy) {
-        enemy.setHealth(enemy.getHealth() - this.attackPower);
+        enemy.setHealth(enemy.getHealth()-this.attackPower);
+
     }
 
     public void showInfo() {

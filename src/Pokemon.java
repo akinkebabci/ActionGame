@@ -11,7 +11,7 @@ public  class Pokemon implements IAssaultEquipment {
 
     @Override
     public void showInfo() {
-        System.out.println("Karakter : " + getClass().getName());
+        System.out.println("Pokemon " + getClass().getName());
         System.out.println("Saldırı Gücü : " + this.attackPower);
     }
 }
