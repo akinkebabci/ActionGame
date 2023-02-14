@@ -4,9 +4,17 @@ public  class Pokemon implements IAssaultEquipment {
     public Pokemon(int attackPower) {
         this.attackPower = attackPower;
     }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
     @Override
     public void damage(Player enemy) {
-        enemy.setHealth(enemy.getHealth()-this.attackPower);
+        if (enemy.getHealth()>0 && enemy.getHealth()<=100){
+            enemy.setHealth(enemy.getHealth()-this.attackPower);
+        }
+
     }
 
     @Override

@@ -3,17 +3,14 @@ import java.util.Random;
 public class Player {
     private String firstName;
     private String lastName;
-    private int health;
+    private int health=100;
     private int totalEquipments = 0;
     private IAssaultEquipment[] assaultEquipments = new IAssaultEquipment[3];
-
-
 
 
     public Player(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.health = 100;
     }
 
     public String getFirstName() {
@@ -55,26 +52,30 @@ public class Player {
 
     //Saldırı Ekipmanı ekle
     public void addAssaultEquipments(IAssaultEquipment iAssaultEquipment) {
-        if (totalEquipments<=3){
+        if (totalEquipments <= 3) {
             assaultEquipments[totalEquipments++] = iAssaultEquipment;
         }
     }
 
     //Saldırı Ekipmanı rastgele üret
     public IAssaultEquipment randomAssaultEquipmentsSelecting() {
+
         Random random = new Random();
+
         int generateRandom = random.nextInt(this.totalEquipments);
         return assaultEquipments[generateRandom];
+    }
 
+    public boolean isALive(){
+        return health >= 0;
     }
 
     //Bilgileri Gösterme
     public void showInfo() {
-        System.out.println("Adı : " + this.firstName);
-        System.out.println("Soyadı : " + this.lastName);
+        System.out.println(this.firstName + " " + this.lastName);
         System.out.println("Sağlık : " + this.health);
-        System.out.print("Seçtiği Ekipman : ");
-        randomAssaultEquipmentsSelecting().showInfo();
+
+
     }
 
 }
